@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゲーム業界ニュース バックナンバー</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #0f0f1a;
+      color: #e8e8f0;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+    .container { max-width: 700px; margin: 0 auto; }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 28px 24px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border-radius: 16px;
+      border: 1px solid #2a2a4a;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+    header p { color: #8888aa; font-size: 0.83rem; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #555577;
+      margin: 24px 0 10px;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a2e;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 8px;
+      border: 1px solid #2a2a4a;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .news-item:hover {
+      border-color: #4a4a8a;
+      background: #1e1e38;
+    }
+
+    .news-item .left { display: flex; flex-direction: column; gap: 5px; }
+    .news-item .date { font-size: 0.8rem; color: #8888aa; }
+    .news-item .title { font-size: 0.95rem; font-weight: 600; }
+    .news-item .meta { font-size: 0.75rem; color: #6666aa; }
+    .news-item .arrow { color: #4a4a8a; font-size: 1.2rem; }
+    .news-item:hover .arrow { color: #a78bfa; }
+
+    .badge-new {
+      display: inline-block;
+      background: #14532d;
+      color: #86efac;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #444466;
+      font-size: 0.75rem;
+      padding-top: 16px;
+      border-top: 1px solid #1e1e38;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>ゲーム業界ニュース バックナンバー</h1>
+    <p>2Dキャラクターデザイナー就活向け | 毎朝8:00 自動更新</p>
+  </header>
+
+  <div class="section-label">2026年4月</div>
+
+  <a href="2026-04-02.html" class="news-item">
+    <div class="left">
+      <div class="date">2026年4月2日（木）</div>
+      <div class="title">ゲーム業界ニュース まとめ <span class="badge-new">NEW</span></div>
+      <div class="meta">就活情報7件 | 注目企業20社 | リリース16作品</div>
+    </div>
+    <div class="arrow">›</div>
+  </a>
+
+  <a href="2026-04-01.html" class="news-item">
+    <div class="left">
+      <div class="date">2026年4月1日（火）</div>
+      <div class="title">ゲーム業界ニュース まとめ</div>
+      <div class="meta">就活情報5件 | 注目企業20社 | トレンド8件</div>
+    </div>
+    <div class="arrow">›</div>
+  </a>
+
+  <!-- 今後ここに日付ごとのリンクが追加される -->
+
+  <footer>
+    <p>Claude Codeによって毎朝自動生成 | 情報は各社公式サイトで確認してください</p>
+  </footer>
+
+</div>
+</body>
+</html>

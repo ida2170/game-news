@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゲーム業界ニュース - 2026年4月2日</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #0f0f1a;
+      color: #e8e8f0;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+      padding: 28px 24px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border-radius: 16px;
+      border: 1px solid #2a2a4a;
+    }
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .header-meta { color: #8888aa; font-size: 0.85rem; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .back-link { display: inline-block; margin-bottom: 16px; color: #6d6d9a; font-size: 0.83rem; text-decoration: none; }
+    .back-link:hover { color: #a78bfa; }
+
+    .section { margin-bottom: 28px; }
+    .section-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 14px; padding-bottom: 10px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+    .badge-hot   { background: #7f1d1d; color: #fca5a5; }
+    .badge-open  { background: #1e3a5f; color: #93c5fd; }
+    .badge-spot  { background: #312e81; color: #c4b5fd; }
+    .badge-event { background: #14532d; color: #86efac; }
+    .badge-warn  { background: #78350f; color: #fde68a; }
+    .badge-date  { background: #1e293b; color: #94a3b8; font-size: 0.65rem; padding: 2px 7px; }
+    .badge-released { background: #064e3b; color: #6ee7b7; }
+    .badge-upcoming { background: #1e3a5f; color: #93c5fd; }
+
+    .source-link {
+      display: inline-block;
+      font-size: 0.72rem;
+      color: #6d6d9a;
+      text-decoration: none;
+      border: 1px solid #2a2a4a;
+      border-radius: 6px;
+      padding: 1px 7px;
+      margin-top: 5px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .source-link:hover { color: #a78bfa; border-color: #4a4a8a; }
+
+    .card {
+      background: #1a1a2e; border-radius: 12px;
+      padding: 15px 18px; margin-bottom: 10px;
+      border: 1px solid #2a2a4a;
+    }
+    .card:hover { border-color: #4a4a8a; }
+
+    .job-card { display: flex; gap: 14px; align-items: flex-start; }
+    .job-card .left { flex-shrink: 0; display: flex; flex-direction: column; gap: 4px; }
+    .job-card .content strong { display: block; margin-bottom: 4px; font-size: 0.92rem; }
+    .job-card .content p { color: #9999bb; font-size: 0.83rem; line-height: 1.6; }
+
+    .company-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+    .company-card {
+      background: #1a1a2e; border-radius: 12px;
+      padding: 14px 16px; border: 1px solid #2a2a4a;
+    }
+    .company-card:hover { border-color: #4a4a8a; }
+    .company-card.spotlight { border-color: #4c1d95; background: linear-gradient(135deg, #1a1a2e, #1e1040); }
+    .company-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 7px; }
+    .company-card p { color: #9999bb; font-size: 0.8rem; line-height: 1.6; margin-bottom: 5px; }
+
+    .trend-card {
+      background: #1a1a2e; border-radius: 12px;
+      padding: 14px 18px; margin-bottom: 10px;
+      border-left: 3px solid #6d28d9;
+    }
+    .trend-card h4 { font-size: 0.92rem; margin-bottom: 6px; color: #c4b5fd; }
+    .trend-card p { color: #9999bb; font-size: 0.82rem; line-height: 1.6; }
+    .highlight { color: #fbbf24; font-weight: 600; }
+
+    .ai-banner {
+      background: linear-gradient(135deg, #1c1006, #2d1b06);
+      border: 1px solid #78350f; border-radius: 12px;
+      padding: 14px 18px; margin-bottom: 10px;
+    }
+    .ai-banner h4 { color: #fbbf24; font-size: 0.9rem; margin-bottom: 5px; }
+    .ai-banner p { color: #d97706; font-size: 0.82rem; line-height: 1.6; }
+
+    .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+    .tip-item {
+      background: #12122a; border-radius: 10px;
+      padding: 10px 13px; border: 1px solid #2a2a4a;
+      font-size: 0.82rem; color: #9999bb;
+      display: flex; align-items: flex-start; gap: 7px;
+    }
+    .tip-item::before { content: "✦"; color: #34d399; font-size: 0.68rem; margin-top: 2px; flex-shrink: 0; }
+
+    /* リリース情報テーブル */
+    .release-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    .release-table th {
+      text-align: left; padding: 9px 12px;
+      background: #12122a; color: #8888aa;
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .release-table td {
+      padding: 10px 12px; border-top: 1px solid #2a2a4a;
+      vertical-align: top; line-height: 1.5;
+    }
+    .release-table td:first-child { color: #60a5fa; font-weight: 600; white-space: nowrap; }
+    .release-table tr:hover td { background: #1e1e38; }
+    .release-table .note { font-size: 0.75rem; color: #6666aa; margin-top: 3px; }
+
+    .event-table { width: 100%; border-collapse: collapse; }
+    .event-table th {
+      text-align: left; padding: 9px 14px;
+      background: #12122a; color: #8888aa;
+      font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .event-table td {
+      padding: 11px 14px; border-top: 1px solid #2a2a4a;
+      font-size: 0.84rem; vertical-align: top; line-height: 1.5;
+    }
+    .event-table td:first-child { color: #60a5fa; font-weight: 600; white-space: nowrap; }
+    .event-table tr:hover td { background: #1e1e38; }
+
+    footer {
+      text-align: center; margin-top: 36px;
+      color: #444466; font-size: 0.75rem;
+      padding-top: 18px; border-top: 1px solid #1e1e38;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.3rem; }
+      .company-grid { grid-template-columns: 1fr; }
+      .tips-grid { grid-template-columns: 1fr; }
+      .release-table, .event-table { font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a href="index.html" class="back-link">← バックナンバー一覧に戻る</a>
+
+  <header>
+    <h1>ゲーム業界ニュース まとめ</h1>
+    <div class="header-meta">
+      <span>📅 集計日：2026年4月2日（木）</span>
+      <span>🎨 2Dキャラクターデザイナー就活向け</span>
+    </div>
+  </header>
+
+  <!-- ① 就活に直結する情報 -->
+  <section class="section">
+    <div class="section-title"><span>📌</span> 就活に直結する情報</div>
+
+    <div class="card job-card">
+      <div class="left">
+        <span class="badge badge-hot">通年採用</span>
+        <span class="badge badge-date">2026/04/02確認</span>
+      </div>
+      <div class="content">
+        <strong>サイバーエージェント — ゲームイラストレーター（クリエイターコース）</strong>
+        <p>職種別選考でゲームイラストレーター・ゲーム3DCGクリエイター・デザイナー総合職など5職種が並走。27卒向け内定直結型ワークショップ「ゲームクリエイティブ激論会」の募集が進行中。ポートフォリオ → 課題 → 面接の流れ。</p>
+        <a class="source-link" href="https://creators.cyberagent.co.jp/" target="_blank">↗ CyberAgent クリエイター採用</a>
+        <a class="source-link" href="https://www.cyberagent.co.jp/way/list/detail/id=31316" target="_blank">↗ 選考フロー解説</a>
+      </div>
+    </div>
+
+    <div class="card job-card">
+      <div class="left">
+        <span class="badge badge-open">受付中</span>
+        <span class="badge badge-date">2026/04/02確認</span>
+      </div>
+      <div class="content">
+        <strong>スクウェア・エニックス — 2027年度新卒採用（ゲーム・映像開発職）</strong>
+        <p>2Dデザイン含むゲーム開発職でエントリー受付中。Nintendo Switch 2向けタイトルが多数控えており、2Dアーティスト採用の可能性も高い。</p>
+        <a class="source-link" href="https://www.jp.square-enix.com/recruit/fresh/job/game-create.html" target="_blank">↗ SQUARE ENIX 採用サイト</a>
+      </div>
+    </div>
+
+    <div class="card job-card">
+      <div class="left">
+        <span class="badge badge-open">受付中</span>
+        <span class="badge badge-date">2026/04/02確認</span>
+      </div>
+      <div class="content">
+        <strong>Aiming — 新卒採用（ゲームオタ採用）</strong>
+        <p>「学歴より好きなゲームの深さを重視」するゲームオタ採用を展開。WIND BREAKER・ドラクエタクトなど有名IPを手がける。2Dデザイナー職の採用実績あり。</p>
+        <a class="source-link" href="https://recruit.aiming-inc.com/graduate/company/" target="_blank">↗ Aiming 新卒採用</a>
+      </div>
+    </div>
+
+    <div class="card job-card">
+      <div class="left">
+        <span class="badge badge-open">受付中</span>
+        <span class="badge badge-date">2026/04/02確認</span>
+      </div>
+      <div class="content">
+        <strong>シリコンスタジオエージェント — 2Dデザイナー転職・中途求人</strong>
+        <p>ゲーム・映像業界専門のエージェント。2Dデザイナー・イラストレーター・UI/UXアーティスト職が複数掲載中。アトラス（セガサミー子会社）など中堅〜大手の募集が含まれる。</p>
+        <a class="source-link" href="https://ss-agent.jp/side/2DDesigner/" target="_blank">↗ 2Dデザイナー求人一覧</a>
+        <a class="source-link" href="https://ss-agent.jp/jobsearch/category/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%8A%E3%83%BC%E3%80%81%E3%82%A2%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9%E3%83%88%E7%B3%BB" target="_blank">↗ デザイナー・アーティスト系</a>
+      </div>
+    </div>
+
+    <div class="card job-card">
+      <div class="left">
+        <span class="badge badge-event">イベント</span>
+        <span class="badge badge-date">2026/04/02確認</span>
+      </div>
+      <div class="content">
+        <strong>キャリアクエスト — ゲーム業界就活イベント（2027卒・2028卒対象）</strong>
+        <p>ゲーム会社専門の合同就活イベント。2027卒（28卒枠）・2028卒を対象に開催。複数のゲーム会社と直接対話できる機会。開催日程は公式サイトで確認を。</p>
+        <a class="source-link" href="https://career-quest.games/" target="_blank">↗ キャリアクエスト</a>
+      </div>
+    </div>
+
+    <div class="card job-card">
+      <div class="left">
+        <span class="badge badge-event">イベント</span>
+        <span class="badge badge-date">2026/04/02確認</span>
+      </div>
+      <div class="content">
+        <strong>ゲーム会社インターン・アルバイト一覧（26卒・27卒）</strong>
+        <p>209社掲載のゲーム会社リストサイトが2027卒向けにも対応。4月からインターン募集が本格化している時期。まずは説明会・オープンカンパニーからのステップが推奨されている。</p>
+        <a class="source-link" href="https://shinsotsushukatsu-real.com/game-internship/" target="_blank">↗ ゲーム会社インターン一覧</a>
+        <a class="source-link" href="https://shinsotsushukatsu-real.com/game-company-list/" target="_blank">↗ ゲーム会社一覧209社</a>
+      </div>
+    </div>
+
+    <div class="card" style="border-color: #065f46; background: #052e1699;">
+      <strong style="color: #34d399; font-size: 0.88rem;">ゲームクリエイターズギルド — ゲーム業界就活ニュース<span class="badge badge-date" style="margin-left:6px;">毎週更新</span></strong>
+      <p style="color: #6ee7b7; font-size: 0.82rem; margin-top: 5px; line-height: 1.6;">ゲーム業界就活に特化した週次ニュースが無料公開されている。採用・インターン・説明会情報をまとめて確認できる重要リソース。</p>
+      <a class="source-link" href="https://game.creators-guild.com/g4c/shukatsu_news_20260213/" target="_blank">↗ 2026年2月3週目号</a>
+      <a class="source-link" href="https://game.creators-guild.com/g4c/shukatsu_news_20260206/" target="_blank">↗ 2026年2月2週目号</a>
+    </div>
+  </section>
+
+  <!-- ② 注目企業の動き（20社） -->
+  <section class="section">
+    <div class="section-title"><span>🏢</span> 注目企業の動き（20社）</div>
+
+    <div class="company-grid">
+
+      <div class="company-card spotlight">
+        <div class="company-name">レベルファイブ <span class="badge badge-spot">注目</span></div>
+        <p>2026年1月、スマホ新作『イナズマイレブン クロス』の配信が決定しクローズドベータも実施。2026年2月には『妖怪ウォッチ ぷにぷに』3,500万DL突破。エイプリルフール企画でテーマパーク「LEVEL5 LAND」のPVを公開（ネタ）。</p>
+        <a class="source-link" href="https://www.level5.co.jp/information/" target="_blank">↗ 公式お知らせ</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/01〜04</span>
+      </div>
+
+      <div class="company-card spotlight">
+        <div class="company-name">Colorful Palette <span class="badge badge-spot">注目</span></div>
+        <p>劇場版『プロジェクトセカイ 壊れたセカイと歌えないミク』が公開中（2025年〜）。プロジェクトセカイのライブイベント「COLORFUL LIVE 4th」も2025年1月に実施。Live2Dを多用する2Dアート中心の会社。</p>
+        <a class="source-link" href="https://colorfulpalette.co.jp/" target="_blank">↗ Colorful Palette公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2025/01〜継続</span>
+      </div>
+
+      <div class="company-card spotlight">
+        <div class="company-name">Aiming <span class="badge badge-spot">注目</span></div>
+        <p>有名IP「WIND BREAKER 不良たちの英雄譚」「ドラゴンクエストタクト」などを開発・運営。「ゲームオタ採用」により実力重視の選考を実施中。</p>
+        <a class="source-link" href="https://aiming-inc.com/en/" target="_blank">↗ Aiming公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card spotlight">
+        <div class="company-name">サイバーエージェント <span class="badge badge-spot">注目</span></div>
+        <p>子会社GOODROIDが「FAIRY TAIL 魔導士クロニクル」を全世界2025年冬に配信決定・事前登録開始。ゲームイラストレーター通年採用継続中。SGE傘下の複数スタジオが独自採用も実施。</p>
+        <a class="source-link" href="https://www.cyberagent.co.jp/en/service/game/" target="_blank">↗ ゲーム事業</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">任天堂</div>
+        <p>Nintendo Switch 2向けにサードパーティを含む多数のタイトルが集中。『ファイアーエムブレム 万紫千紅』『ぽこ あ ポケモン』などが2026年リリース予定。Switch 2開発は開発者の39%が関心を示している（GDC 2026調査）。</p>
+        <a class="source-link" href="https://www.nintendo.co.jp/" target="_blank">↗ 任天堂公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">ソニー・インタラクティブエンタテインメント</div>
+        <p>PS5向け2026年注目タイトルを多数抱える。Marvel's Wolverine（2026年秋）をはじめ独占タイトルのラインナップが継続。PS5の2026年期待作リストをPlayStation公式が公開中。</p>
+        <a class="source-link" href="https://www.playstation.com/en-us/editorial/most-anticipated-games-coming-to-playstation-this-year/" target="_blank">↗ PlayStation 2026年期待作</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">カプコン</div>
+        <p>『バイオハザード レクイエム』（2026年2月）と完全新規IP『プラグマタ』（2026年4月24日）が直近の主要タイトル。2026年は大型タイトルが連続リリース。</p>
+        <a class="source-link" href="https://www.capcom.co.jp/" target="_blank">↗ カプコン公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/02〜04</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">スクウェア・エニックス</div>
+        <p>『ドラゴンクエストVII Reimagined』が2026年2月発売。Nintendo Switch 2対応タイトルを多数用意。2027年度新卒採用でゲーム・映像開発職を募集中。</p>
+        <a class="source-link" href="https://www.jp.square-enix.com/column/detail/113/" target="_blank">↗ Switch 2対応タイトル</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/02〜04</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">バンダイナムコエンターテインメント</div>
+        <p>2024年9月中間決算で記録的好業績。デジタル・玩具ホビー事業が好調。鉄拳シリーズをTGS 2024でアピール。2027年度エントリー受付（マイナビ）は2026年3月〜開始済み。</p>
+        <a class="source-link" href="https://www.bandainamcoent.co.jp/" target="_blank">↗ バンダイナムコ公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">コナミ</div>
+        <p>eFootballが継続的に好業績を牽引。コナミグループは2024年9月中間で記録的な売上・利益を達成。スポーツ・音楽ゲームジャンルで安定した地盤を持つ。</p>
+        <a class="source-link" href="https://www.konami.com/games/jp/ja/" target="_blank">↗ コナミ公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2024/09実績</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">セガ</div>
+        <p>龍が如くシリーズのブランド戦略を継続（TGS 2024で発表）。採用イベント「インターンシップ&キャリア発見EXPO」へ参加実績あり（2026年1月）。アトラス（子会社）が2Dデザイナー採用中。</p>
+        <a class="source-link" href="https://www.sega.co.jp/recruit/event/" target="_blank">↗ セガ採用イベント</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">コーエーテクモ</div>
+        <p>『仁王3』が2026年3月リリース予定。大型タイトルを下期に集中投入する戦略を継続。2024年9月中間はカプコンとともに大型作を下期に控えた状況だった。</p>
+        <a class="source-link" href="https://www.koeitecmo.co.jp/" target="_blank">↗ コーエーテクモ公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/03予定</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">フロムソフトウェア</div>
+        <p>本日は具体的な新情報なし。2027年度新卒採用エントリーを受け付け中（〜2026年3月卒業見込みが主対象）。少数精鋭採用のため、ポートフォリオの質が最重要。</p>
+        <a class="source-link" href="https://careers.fromsoftware.jp/jp/newgraduates.html" target="_blank">↗ フロムソフトウェア採用</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">サイゲームス</div>
+        <p>通常選考受付中。デザイナー向けインターンシップを複数コースで展開中。グランブルーファンタジー・ウマ娘など人気IPを多数保有。採用競争率は極めて高い。</p>
+        <a class="source-link" href="https://fresh.cygames.co.jp/internship/" target="_blank">↗ サイゲームス インターン</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">アトラス（セガサミー子会社）</div>
+        <p>ペルソナ・真・女神転生シリーズで知られる35年以上のコンシューマー開発実績を持つ会社。現在2Dデザイナー職の採用中。シリコンスタジオエージェント経由で求人掲載あり。</p>
+        <a class="source-link" href="https://ss-agent.jp/side/2DDesigner/" target="_blank">↗ 求人詳細（SS-Agent）</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026/04確認</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">スパイク・チュンソフト</div>
+        <p>『スーパーダンガンロンパ 2x2』が2026年PS5向けにリリース予定。ダンガンロンパ・ルートレター等のビジュアルノベルジャンルで2Dイラスト・キャラデザを重視している会社。</p>
+        <a class="source-link" href="https://www.spike-chunsoft.co.jp/" target="_blank">↗ スパイク・チュンソフト公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">2026年予定</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">DeNA</div>
+        <p>本日は具体的な新情報なし。モバイルゲームを主軸に展開。野球（ベイスターズ）・スポーツ関連IPを多く保有。ゲームエンジニア・デザイナー職の採用は継続中。</p>
+        <a class="source-link" href="https://dena.com/jp/business/game/" target="_blank">↗ DeNA ゲーム事業</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">本日情報なし</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">グリー</div>
+        <p>本日は具体的な新情報なし。スマホゲーム・メタバース・VTuber事業を展開。ゲーム開発は子会社に分散しており、各社での採用が中心。</p>
+        <a class="source-link" href="https://gree.net/" target="_blank">↗ グリー公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">本日情報なし</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">ガンホー</div>
+        <p>本日は具体的な新情報なし。パズル&ドラゴンズシリーズを主力とするモバイルゲーム会社。キャラクターデザイナー職の採用実績あり。</p>
+        <a class="source-link" href="https://www.gungho.jp/" target="_blank">↗ ガンホー公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">本日情報なし</span>
+      </div>
+
+      <div class="company-card">
+        <div class="company-name">コロプラ</div>
+        <p>本日は具体的な新情報なし。白猫プロジェクト・黒猫のウィズなどを運営するモバイルゲーム会社。2Dイラスト・キャラクターデザイナー職の採用実績あり。</p>
+        <a class="source-link" href="https://colopl.co.jp/" target="_blank">↗ コロプラ公式</a>
+        <span class="badge badge-date" style="display:inline-block;margin-top:4px;">本日情報なし</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ③ 業界トレンド・面接で使えるネタ -->
+  <section class="section">
+    <div class="section-title"><span>📊</span> 業界トレンド・面接で使えるネタ</div>
+
+    <div class="trend-card">
+      <h4>GDC 2026レポート：レイオフ・AI・採用の実態（2026年3月発表）</h4>
+      <p>3,000人以上のゲーム開発者への大規模調査。<span class="highlight">回答者の28%（米国は33%）が過去2年間にレイオフを経験</span>。特に学生の74%が「ゲーム業界の将来の就職見通しに不安を感じている」と回答。Steam Deck向け開発に関心を持つ開発者は40%、Switch 2は39%。</p>
+      <a class="source-link" href="https://www.igda.jp/2026/03/21/16481/" target="_blank">↗ IGDA Japan — GDC 2026レポート</a>
+    </div>
+
+    <div class="ai-banner">
+      <h4>🤖 生成AIとゲームアート — 2026年最新動向</h4>
+      <p><span class="highlight">2026年1月のSteam新作の約30%が生成AIを利用</span>。Steamはポリシーを変更し、開発補助目的のAI利用は申請不要に（プレイヤー向けのAI生成コンテンツは明示義務あり）。<br><br>
+      開発者調査ではAIの主な活用：調査・ブレスト<span class="highlight">81%</span>、事務メール47%、コード支援47%、プロトタイピング35%。一方、プレイヤーが直接目にするAI生成アートの使用は<span class="highlight">5%と少数派</span>で、欧米・日本ともにアートワークへのAI使用は反発が大きい傾向。</p>
+      <a class="source-link" href="https://www.gamebusiness.jp/article/2026/03/27/26512.html" target="_blank">↗ GameBusiness.jp — Steam生成AI利用調査</a>
+      <a class="source-link" href="https://t-arashiyama.com/2026/03/02/gamedev-ai-workflow-2026/" target="_blank">↗ ゲーム開発者のAIワークフロー2026</a>
+    </div>
+
+    <div class="trend-card">
+      <h4>2026年版ゲーム市場動向（Sensor Tower）</h4>
+      <p>モバイル・PC/コンソール市場のトレンドを分析した年次レポートが公開。市場全体の状況把握に役立つ。</p>
+      <a class="source-link" href="https://sensortower.com/ja/blog/state-of-gaming-2026-JP" target="_blank">↗ Sensor Tower 2026年版市場年鑑</a>
+    </div>
+
+    <div class="trend-card">
+      <h4>GTA6・大作ラッシュが2026年ゲーム市場を牽引</h4>
+      <p>GTA6（2026年11月19日、Rockstar）が2度の延期を経てようやくリリース予定。バイオハザード レクイエム・ドラクエVIIリメイク・仁王3など大型タイトルが1年を通して展開。カプコン・スクウェアエニックス・コーエーテクモが揃い踏み。</p>
+      <a class="source-link" href="https://news.yahoo.co.jp/articles/220f9e9566b967e039d1bb2dcdc1f5ec4617950b" target="_blank">↗ Yahoo!ニュース — 2026年注目タイトル10選</a>
+      <a class="source-link" href="https://game.watch.impress.co.jp/docs/kikaku/2074121.html" target="_blank">↗ GAME Watch — 2026年新作特集</a>
+    </div>
+
+    <div class="trend-card">
+      <h4>任天堂・カプコン・スクエニが2026年に積極展開</h4>
+      <p>Nintendo Switch 2への移行に伴い、大手各社がタイトルラインナップを強化中。スクウェア・エニックスはSwitch 2対応タイトルを複数用意。業界全体でSwitch 2対応の動きが加速している。</p>
+      <a class="source-link" href="https://www.jp.square-enix.com/column/detail/113/" target="_blank">↗ SQUARE ENIX Switch 2タイトル紹介</a>
+    </div>
+
+    <div class="trend-card">
+      <h4>TGS 2024：長寿IPブランド戦略の共有</h4>
+      <p>コナミ（プロ野球スピリッツA）・セガ（龍が如く）・バンダイナムコ（鉄拳）の3社が東京ゲームショウ2024でロングランタイトルのブランド戦略を公開講演。IPを持つ中堅〜大手の強さが改めて浮き彫りに。</p>
+      <a class="source-link" href="https://xtrend.nikkei.com/atcl/contents/18/01044/00009/" target="_blank">↗ 日経Xtrend — TGS2024 長寿タイトル戦略</a>
+    </div>
+
+    <div class="trend-card">
+      <h4>モバイルゲーム：アークナイツ Endfield が全プラットフォーム展開</h4>
+      <p>Hypergrypphの『アークナイツ：エンドフィールド』がPS5/iOS/Android/PC全対応で世界同時リリース予定。コンソールとモバイルの垣根を越えた展開が加速中。</p>
+      <a class="source-link" href="https://uniquerui.com/tblog/2026-expected-mobile-games/" target="_blank">↗ つぶログ — 2026年スマホゲーム期待作</a>
+    </div>
+  </section>
+
+  <!-- ④ 2Dデザイナーとして知っておきたいこと -->
+  <section class="section">
+    <div class="section-title"><span>🎨</span> 2Dデザイナーとして知っておきたいこと</div>
+
+    <div class="ai-banner">
+      <h4>⚠ AIとアートの現状：2Dデザイナー志望者が押さえるべきポイント</h4>
+      <p>GDC 2026の調査では、開発者が直接プレイヤーに見せるアートワークへのAI生成使用は<span class="highlight" style="color:#fde68a;">欧米・日本ともに反発が大きい</span>。ゲーム会社がAIを使うとしても「補助ツール」としての位置づけが主流。<br>
+      面接では「AIツールとの向き合い方」について聞かれる可能性があるため、自分の考えを整理しておくこと。「AIは参照や効率化ツールとして使いながら、最終的な表現は自分の技術で行う」というスタンスが現状では受け入れられやすい。</p>
+      <a class="source-link" href="https://www.gamebusiness.jp/article/2026/03/27/26512.html" target="_blank">↗ Steam生成AI利用動向</a>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip-item">ポートフォリオ重視の採用が業界全体のトレンド。学歴より作品の質を磨くことが優先。</div>
+      <div class="tip-item">サイバーエージェントはゲームイラストレーターとして通年採用中。ポートフォリオ提出から始められる。</div>
+      <div class="tip-item">アトラス（セガ子会社）が2Dデザイナー採用中。35年以上のコンシューマーゲーム開発実績あり。</div>
+      <div class="tip-item">Colorful PaletteはLive2D・プロセカ系の2Dアートが主体。ライブ演出を意識した動くキャラデザの経験が活きる。</div>
+      <div class="tip-item">Switch 2対応タイトルが急増中。2Dアートを重視するJRPG・ビジュアルノベル系の開発需要が高まっている。</div>
+      <div class="tip-item">レベルファイブはイナズマイレブン・妖怪ウォッチ等2Dキャラを主体とするIP多数。2Dデザイナーとの親和性が高い。</div>
+      <div class="tip-item">「ゲームオタ採用」（Aiming等）は学歴不問でゲームへの熱意・知識を重視。既卒でも戦える選考。</div>
+      <div class="tip-item">シリコンスタジオエージェントは2Dデザイナー特化の求人が多く、非公開求人も存在する。登録推奨。</div>
+    </div>
+  </section>
+
+  <!-- ⑤ 注目ゲームソフト リリース情報 -->
+  <section class="section">
+    <div class="section-title"><span>🎮</span> 注目ゲームソフト リリース情報</div>
+
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table class="release-table">
+        <thead>
+          <tr>
+            <th>発売日</th>
+            <th>タイトル</th>
+            <th>会社</th>
+            <th>機種</th>
+            <th>ジャンル / 注目ポイント</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026/01<br><span class="badge badge-released">配信済</span></td>
+            <td>イナズマイレブン クロス</td>
+            <td>レベルファイブ</td>
+            <td>iOS / Android</td>
+            <td>スポーツRPG。イナズマイレブンの新作スマホゲーム。CBT実施済み。<br>
+              <div class="note"><a href="https://www.level5.co.jp/information/" target="_blank" style="color:#6666aa;">↗ レベルファイブ公式</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/01<br><span class="badge badge-released">発売済</span></td>
+            <td>CODE VEIN II</td>
+            <td>バンダイナムコ</td>
+            <td>PS5 / PC</td>
+            <td>アクションRPG。吸血鬼テーマのダーク世界観。CODE VEINの続編。<br>
+              <div class="note"><a href="https://www.bandainamcoent.co.jp/" target="_blank" style="color:#6666aa;">↗ バンダイナムコ公式</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/02<br><span class="badge badge-released">発売済</span></td>
+            <td>バイオハザード レクイエム</td>
+            <td>カプコン</td>
+            <td>PS5 / PC</td>
+            <td>サバイバルホラーアクション。新主人公グレースとレオンが共演。ラクーン事件の真実を追う。<br>
+              <div class="note"><a href="https://www.capcom.co.jp/" target="_blank" style="color:#6666aa;">↗ カプコン公式</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/02<br><span class="badge badge-released">発売済</span></td>
+            <td>ドラゴンクエストVII Reimagined</td>
+            <td>スクウェア・エニックス</td>
+            <td>Switch / PS5</td>
+            <td>JRPG。PS版DQ7のリメイク。現代的なプレイ体験に刷新。<br>
+              <div class="note"><a href="https://www.jp.square-enix.com/" target="_blank" style="color:#6666aa;">↗ スクウェア・エニックス公式</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/03<br><span class="badge badge-upcoming">予定</span></td>
+            <td>仁王3</td>
+            <td>コーエーテクモ</td>
+            <td>PS5 / PC</td>
+            <td>アクションRPG。戦国×妖怪テーマの高難易度アクション。シリーズ最新作。<br>
+              <div class="note"><a href="https://game.watch.impress.co.jp/docs/kikaku/2074121.html" target="_blank" style="color:#6666aa;">↗ GAME Watch 特集</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/04/24<br><span class="badge badge-upcoming">予定</span></td>
+            <td>プラグマタ（Pragmata）</td>
+            <td>カプコン</td>
+            <td>PS5 / Xbox / PC</td>
+            <td>アクション。完全新規IP。近未来SFの世界観。長期開発作品がついにリリース。<br>
+              <div class="note"><a href="https://www.famitsu.com/schedule" target="_blank" style="color:#6666aa;">↗ ファミ通 発売スケジュール</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/04<br><span class="badge badge-upcoming">予定</span></td>
+            <td>ファイアーエムブレム 万紫千紅</td>
+            <td>任天堂 / インテリジェントシステムズ</td>
+            <td>Switch 2</td>
+            <td>シミュレーションRPG。2DキャラクターデザインとFEシリーズの王道展開。<br>
+              <div class="note"><a href="https://dengekionline.com/article/202512/61040/" target="_blank" style="color:#6666aa;">↗ 電撃オンライン 2026年Switch注目作</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>ぽこ あ ポケモン</td>
+            <td>任天堂 / The Pokémon Company</td>
+            <td>Switch 2</td>
+            <td>ポケモンスピンオフ。ポケモンIPのSwitch 2タイトル。<br>
+              <div class="note"><a href="https://dengekionline.com/article/202512/61040/" target="_blank" style="color:#6666aa;">↗ 電撃オンライン 2026年Switch注目作</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>イナズマイレブン RE</td>
+            <td>レベルファイブ</td>
+            <td>Switch 2</td>
+            <td>スポーツRPG。イナズマイレブンシリーズのリメイク。2Dキャラデザが光る作品。<br>
+              <div class="note"><a href="https://dengekionline.com/article/202512/61040/" target="_blank" style="color:#6666aa;">↗ 電撃オンライン</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>流星のロックマン パーフェクトコレクション</td>
+            <td>カプコン</td>
+            <td>Switch 2</td>
+            <td>アクションRPG。人気シリーズのコレクション版。2Dドット&イラストデザインのIPを再評価。<br>
+              <div class="note"><a href="https://dengekionline.com/article/202512/61040/" target="_blank" style="color:#6666aa;">↗ 電撃オンライン</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>スーパーダンガンロンパ 2x2</td>
+            <td>スパイク・チュンソフト</td>
+            <td>PS5</td>
+            <td>ビジュアルノベル・アドベンチャー。独特の2Dキャラクターデザインが特徴のシリーズ。<br>
+              <div class="note"><a href="https://www.famitsu.com/article/202601/62023" target="_blank" style="color:#6666aa;">↗ ファミ通 2026年PS5注目作</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年秋<br><span class="badge badge-upcoming">予定</span></td>
+            <td>Marvel's Wolverine</td>
+            <td>Insomniac Games / SIE</td>
+            <td>PS5独占</td>
+            <td>アクションアドベンチャー。Marvel Spidermanシリーズのスタジオが贈るウルヴァリン主役作。<br>
+              <div class="note"><a href="https://www.playstation.com/en-us/editorial/most-anticipated-games-coming-to-playstation-this-year/" target="_blank" style="color:#6666aa;">↗ PlayStation 公式</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>Arknights Endfield（アークナイツ エンドフィールド）</td>
+            <td>Hypergryph</td>
+            <td>PS5 / iOS / Android / PC</td>
+            <td>リアルタイムストラテジーRPG。アークナイツの世界観を継承した全機種展開タイトル。<br>
+              <div class="note"><a href="https://uniquerui.com/tblog/2026-expected-mobile-games/" target="_blank" style="color:#6666aa;">↗ つぶログ 2026年スマホゲーム期待作</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>空の軌跡 the 2nd</td>
+            <td>日本ファルコム</td>
+            <td>PS5 / Switch 2 / PC</td>
+            <td>JRPG。名作軌跡シリーズのリメイク。2Dキャラクターイラストを大きく刷新。<br>
+              <div class="note"><a href="https://dengekionline.com/article/202512/61479/" target="_blank" style="color:#6666aa;">↗ 電撃オンライン 2026年PS5注目作</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026/11/19<br><span class="badge badge-upcoming">予定</span></td>
+            <td>グランド・セフト・オートVI（GTA6）</td>
+            <td>Rockstar Games</td>
+            <td>PS5 / XSX</td>
+            <td>オープンワールドアクション。2度の延期を経てついに確定。2026年最大の話題作。業界全体への影響が大きい。<br>
+              <div class="note"><a href="https://news.yahoo.co.jp/articles/220f9e9566b967e039d1bb2dcdc1f5ec4617950b" target="_blank" style="color:#6666aa;">↗ Yahoo!ニュース</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2026年<br><span class="badge badge-upcoming">予定</span></td>
+            <td>FAIRY TAIL 魔導士クロニクル</td>
+            <td>GOODROID（サイバーエージェント子会社）</td>
+            <td>iOS / Android</td>
+            <td>RPG。FAIRY TAIL IPの新作スマホゲーム。全世界配信。サイバーエージェントのゲーム事業の一端。<br>
+              <div class="note"><a href="https://www.cyberagent.co.jp/en/service/game/" target="_blank" style="color:#6666aa;">↗ サイバーエージェント ゲーム事業</a></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.75rem; color:#555577; margin-top:6px;">※発売日は変更になる場合があります。最新情報は各社公式サイトでご確認ください。</p>
+  </section>
+
+  <!-- ⑥ 今後のイベント・締切情報 -->
+  <section class="section">
+    <div class="section-title"><span>📅</span> 今後のイベント・締切情報</div>
+
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <table class="event-table">
+        <thead>
+          <tr>
+            <th>日程</th>
+            <th>内容</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>通年</td>
+            <td><span class="badge badge-hot">通年採用</span> サイバーエージェント ゲームイラストレーター選考</td>
+            <td>エントリー随時受付。ポートフォリオ必須。<a class="source-link" href="https://creators.cyberagent.co.jp/" target="_blank">↗ サイト</a></td>
+          </tr>
+          <tr>
+            <td>2026年4月〜</td>
+            <td><span class="badge badge-open">受付中</span> 27卒向け「ゲームクリエイティブ激論会」（CA）</td>
+            <td>内定直結型1dayワークショップ。クリエイターコース対象。<a class="source-link" href="https://creators.cyberagent.co.jp/" target="_blank">↗ サイト</a></td>
+          </tr>
+          <tr>
+            <td>2026年4月〜</td>
+            <td><span class="badge badge-open">受付中</span> スクウェア・エニックス 2027年度新卒採用</td>
+            <td>ゲーム・映像開発職エントリー受付中。<a class="source-link" href="https://www.jp.square-enix.com/recruit/fresh/job/game-create.html" target="_blank">↗ 採用サイト</a></td>
+          </tr>
+          <tr>
+            <td>2026年4月〜</td>
+            <td><span class="badge badge-open">受付中</span> Aiming 新卒採用エントリー</td>
+            <td>ゲームオタ採用。ポートフォリオ重視。<a class="source-link" href="https://recruit.aiming-inc.com/graduate/company/" target="_blank">↗ 採用サイト</a></td>
+          </tr>
+          <tr>
+            <td>2026年4月〜</td>
+            <td><span class="badge badge-event">インターン</span> サイゲームス デザイナーインターンシップ</td>
+            <td>複数コース。詳細はサイゲームス新卒採用サイトで確認。<a class="source-link" href="https://fresh.cygames.co.jp/internship/" target="_blank">↗ サイト</a></td>
+          </tr>
+          <tr>
+            <td>2026年内</td>
+            <td><span class="badge badge-event">イベント</span> キャリアクエスト（2027卒・2028卒対象）</td>
+            <td>ゲーム業界特化の合同就活イベント。日程は公式で要確認。<a class="source-link" href="https://career-quest.games/" target="_blank">↗ 公式サイト</a></td>
+          </tr>
+          <tr>
+            <td>毎週更新</td>
+            <td><span class="badge badge-event">情報源</span> ゲームクリエイターズギルド 就活ニュース</td>
+            <td>就活に特化した週次まとめ。無料で読める。<a class="source-link" href="https://game.creators-guild.com/g4c/" target="_blank">↗ G4C就活ニュース</a></td>
+          </tr>
+          <tr>
+            <td>毎月更新</td>
+            <td><span class="badge badge-date">確認推奨</span> ゲーム会社インターン・説明会一覧（新卒就活ホンネナビ）</td>
+            <td>209社掲載のゲーム会社リスト。27卒・28卒対応。<a class="source-link" href="https://shinsotsushukatsu-real.com/game-internship/" target="_blank">↗ 一覧</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>Claude Codeによって自動生成（2026-04-02）| 情報は各社公式サイトで必ず確認してください</p>
+    <p style="margin-top:6px;"><a href="index.html" style="color:#4a4a8a; text-decoration:none;">← バックナンバー一覧</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
